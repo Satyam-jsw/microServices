@@ -1,58 +1,36 @@
 # Microservices Architecture
-This repository demonstrates a comprehensive microservices-based architecture, showcasing the creation, integration, and communication of multiple services. Each service is designed to handle specific functionalities and communicates seamlessly with others using modern tools and techniques.
+This repository demonstrates a comprehensive microservices-based architecture, showcasing the creation, integration, and communication of multiple services.
 
-Packages and Services
-hotelService
+1) hotelService Manages:- hotel-related data, Integrated with a PostgreSQL database.
+2) userService :- Handles user registration and user data, Integrated with a MySQL database.
+3) ratingService:- Manages ratings provided by users for hotels. Integrated with a MongoDB database.
+4) apiGateway:- Acts as a gateway to route requests to the appropriate microservices.
+5) configServer:- Centralized configuration management for all services.
+6) serviceRegistry:- Implements Eureka Server for registering and discovering microservices.
 
-Manages hotel-related data.
-Integrated with a PostgreSQL database.
-userService
-
-Handles user registration and user data.
-Integrated with a MySQL database.
-ratingService
-
-Manages ratings provided by users for hotels.
-Integrated with a MongoDB database.
-apiGateway
-
-Acts as a gateway to route requests to the appropriate microservices.
-configServer
-
-Centralized configuration management for all services.
-serviceRegistry
-
-Implements Eureka Server for registering and discovering microservices.
-Features and Implementation
+## Features and Implementation
 Microservices Creation
-
 Full implementation of Hotel and Rating microservices.
 Service Registry and Discovery
-
 Service Registry Server implemented with Eureka.
 Service Discovery Client added to User, Hotel, and Rating services for dynamic communication.
-API Communication
-
+## API Communication
 Microservices communicate seamlessly via APIs.
 Simplified communication by removing the need for hardcoded host and port values.
 User Service interacts with Hotel Service for hotel-related operations.
 Feign Client Integration
-
 Implemented Feign Client for streamlined communication between User and Hotel services.
-API Gateway
-
+## API Gateway
 Set up API Gateway for routing requests to appropriate services.
 Configured multiple URLs for routing via API Gateway.
-Configuration Management
-
+## Configuration Management
 Centralized configuration using Config Server.
 Implemented Cloud Config Client for dynamic property management.
-Resilience and Fault Tolerance
-
+## Resilience and Fault Tolerance
 Integrated Circuit Breaker using Resilience4J for fault tolerance.
 Added Retry mechanism for handling transient failures.
 Implemented Rate Limiter to control traffic using Resilience4J.
-Technologies and Tools
+## Technologies and Tools
 Backend Frameworks: Spring Boot, Spring Cloud.
 Databases: MySQL, PostgreSQL, MongoDB.
 Communication Tools: REST API, Feign Client, Eureka Server.
